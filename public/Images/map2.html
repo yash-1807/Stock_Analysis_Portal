@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	#map {
+		height: 600px;
+		width: 100%;
+	}
+	</style>
+</head>
+<body>
+	<!DOCTYPE html>
+<html>
+  <head>
+    <title>HOME | MAPS    | POLLS   | INDIA   | WORLD   | LOCAL   | HEALTH    | ENTERTAINMENT</title>
+    <style>
+      /* Header styles */
+      header {
+        background-color: #f5f5f5;
+        padding: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      header h1 {
+        margin: 0;
+        font-size: 27px;
+        font-weight: 508;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      header img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+      .profile-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #007bff;
+        margin-left: auto;
+      }
+
+      /* Search bar styles */
+      .search-bar {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        margin: 0 20px 0 10px; /* adjusted margin */
+      }
+      .search-bar input[type="text"] {
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+        margin-right: 10px;
+      }
+      .search-bar button[type="submit"] {
+        padding: 12px 20px;
+        font-size: 19px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 7px;
+        cursor: pointer;
+      }
+      .search-bar button[type="submit"]:hover {
+        background-color: #0069d9;
+      }
+
+      /* Share icon styles */
+      .share-icon {
+        width: 40px;
+        height: 40px;
+        background-image: url('https://cdn-icons-png.flaticon.com/512/44/44763.png');
+        background-size: cover;
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- First Part -->
+    <header>
+      <img src="https://media.licdn.com/dms/image/C4D03AQFIy6iaazninA/profile-displayphoto-shrink_800_800/0/1517492025861?e=2147483647&v=beta&t=KmWDIF3wfSakzUz59iNEr5yP32_a0rE0zKVPmZQ40mI" alt="Website Logo">
+      <h1>HOME | MAPS    | POLLS    | INDIA   | WORLD    | LOCAL   | HEALTH   | ENTERTAINMENT</h1>
+      <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button type="submit">Search</button>
+      </div>
+      <div class="share-icon"></div>
+    </header>
+
+
+	<div id="map"></div>
+	<script>
+	function initMap() {
+        var options = {
+            zoom:5,
+            center:{lat:20.5937, lng:78.9629}
+        }
+        var map = new google.maps.Map(document.getElementById('map'), options);
+		
+        addMarker({coords:{lat:19.0760, lng:72.8777},
+        content: '<body><a href="https://news.google.com/topics/CAAqJQgKIh9DQkFTRVFvSUwyMHZNRFIyYlhBU0JXVnVMVWRDS0FBUAE?ceid=IN:en&oc=3">Mumbai</a> </body>'
+        });
+        addMarker({coords:{lat:28.7041, lng:77.1025},
+        content: '<body><a href="https://news.google.com/topics/CAAqLAgKIiZDQkFTRmdvTkwyY3ZNVEZqTkRWNlgyaGpNaElGWlc0dFIwSW9BQVAB?ceid=IN:en&oc=3">Delhi</a> </body>'
+    });
+        addMarker({coords:{lat:13.0827, lng:80.2707},
+        content: '<body><a href="https://news.google.com/topics/CAAqJQgKIh9DQkFTRVFvSUwyMHZNR000ZEdzU0JXVnVMVWRDS0FBUAE?hl=en-IN&gl=IN&ceid=IN%3Aen">Chennai</a> </body>'
+      });
+        addMarker({coords:{lat:22.5726, lng:88.3639},
+        content: '<body><a href="https://news.google.com/topics/CAAqJQgKIh9DQkFTRVFvSUwyMHZNR04yZHprU0JXVnVMVWRDS0FBUAE?ceid=IN:en&oc=3">Kolkata</a> </body>'
+      });
+      addMarker({coords:{lat:21.7679, lng:78.8718},
+        content: '<body><a href="https://news.google.com/topics/CAAqJQgKIh9DQkFTRVFvSUwyMHZNRE55YXpBU0JXVnVMVWRDS0FBUAE?hl=en-IN&gl=IN&ceid=IN%3Aen">India</a> </body>'
+      });
+        function addMarker(props){
+            var marker = new google.maps.Marker({
+                position:props.coords,
+                map:map,
+                
+            });
+        if(props.iconImage){
+            marker.setIcon(props.iconImage);
+        }
+        if (props.content){
+            var infoWindow = new google.maps.InfoWindow({
+                content:props.content
+            });
+            
+            marker.addListener('click',function(){
+                infoWindow.open(map, marker);
+            });
+        }
+        
+        }
+	}
+		
+	
+	</script>
+	<script async defer
+	src=
+"https://maps.googleapis.com/maps/api/js?key=
+AIzaSyD1F2fKFjTcl6bo-aoRXSMGuLlbsnxP4_0&callback=initMap">
+	</script>
+</body>
+</html>

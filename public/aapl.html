@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yahoo Finance Stock Chart</title>
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Yahoo Finance Stock Chart for AAPL</h1>
+    <canvas id="stockChart" width="800" height="400"></canvas>
+
+    <script>
+        async function fetchData() {
+            const url = 'https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v3/get-chart?interval=1mo&symbol=AAPL&range=5y&region=US&includePrePost=false&useYfid=true&includeAdjustedClose=true&events=capitalGain%2Cdiv%2Csplit';
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': 'c69a391496msh54818cc6616efdep147b30jsneefc9723977c',
+                    'X-RapidAPI-Host': 'apidojo-yahoo-finance-v1.p.rapidapi.com'
+                }
+            };
+
+            try {
+                const response = await fetch(url, options);
+                const result = await response.json();
+                console.log(result); // Log the result to check its structure
+                return result.chart.result[0]; // Changed to result[0]
+            } catch (error) {
+                console.error(error);
+                return null;
+            }
+        }
+
+        async function displayChart() {
+            const chartData = await fetchData();
+            if (chartData && chartData.timestamp && chartData.indicators) {
+                const dates = chartData.timestamp.map(timestamp => new Date(timestamp * 1000));
+                const closePrices = chartData.indicators.quote[0].close;
+
+                // Create a line chart
+                const ctx = document.getElementById('stockChart').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: dates,
+                        datasets: [{
+                            label: 'Closing Price (USD)',
+                            data: closePrices,
+                            borderColor: 'blue',
+                            borderWidth: 1,
+                            fill: false
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            xAxes: [{
+                                type: 'time',
+                                time: {
+                                    unit: 'month'
+                                }
+                            }],
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: false
+                                }
+                            }]
+                        }
+                    }
+                });
+            } else {
+                // Handle error or display a message
+                document.getElementById('stockChart').innerText = 'Failed to fetch data or data is incomplete. Please try again later.';
+            }
+        }
+
+        // Call the displayChart function to fetch and display the chart data
+        displayChart();
+    </script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+body {
+    background-color:#0f0f0f;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #7fe35b;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    margin: 0 auto; 
+    border-radius:10ch;
+}
+
+.logo img {
+    width: 40px; 
+    height: auto;
+    margin-right: 10px;
+    margin-top: 0px;
+}
+
+.logo span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+
+
+
+
+
+
+.flip-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    position: relative;
+    margin-left:10%;
+  }
+  
+  .flip-card {
+    width: 250px; /* Fixed width for each card */
+    margin: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    .flip-card {
+      width: calc(50% - 20px); /* Display two cards per row on smaller screens */
+    }
+  }
+
+
+
+.flip-card {
+    background-image: url('/public/Images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    width: 250px;
+    height: 250px;
+    perspective: 1000px;
+    position: relative;
+    left: 20%;
+    margin-top: 5ch;
+    border-radius: 5ch;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 5ch;
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: white; /* Set background color to white */
+    border: 5px solid green; /* Set border to green */
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    background-color: #7fe35b; /* Set background color to white */
+    border: 5px solid green; /* Set border to green */
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+
+
+.headlines {
+    position:absolute;
+    top: 12%; /* Adjust this value as needed */
+    right: 20%; /* Adjust this value as needed */
+    background-color: white;
+    height: 600px;
+    width: 300px;
+    text-align: center;
+}
+
+
+  
+
+.box1 {
+    margin-top: 0;
+    width: 200px;
+    height: 50px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 50px;
+}
+
+.box2 {
+    margin-top: 20px; /* Adjust the margin as needed */
+    width: 200px;
+    height: 50px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 50px;
+}
+
+.box3 {
+    margin-top: 20px; /* Adjust the margin as needed */
+    width: 200px;
+    height: 50px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 50px;
+}
+
+.box4 {
+    margin-top: 20px; /* Adjust the margin as needed */
+    width: 200px;
+    height: 50px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 50px;
+}
+
+.box5 {
+    margin-top: 20px; /* Adjust the margin as needed */
+    width: 200px;
+    height: 50px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 50px;
+}
+
+.box6 {
+    margin-top: 20px; /* Adjust the margin as needed */
+    width: 200px;
+    height: 50px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 50px;
+}
+
+.box7 {
+    margin-top: 20px; /* Adjust the margin as needed */
+    width: 200px;
+    height: 50px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 50px;
+}
+
+.box8 {
+    margin-top: 20px; /* Adjust the margin as needed */
+    width: 200px;
+    height: 50px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 50px;
+}
+
+.mahabox{
+    position: absolute;
+    right: 25%;
+    top: 12%;
+}
+

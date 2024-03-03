@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> StockScope </title>
+  <style>
+    #map {
+      height: 600px;
+      width: 100%;
+    }
+  </style>
+</head>
+
+
+    <style>
+
+.dropbtn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+      
+      /* Styling for the dropdown content */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        z-index: 1;
+      }
+      
+      /* Styling for the dropdown links */
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      /* Styling for the hover effect of the dropdown links */
+      .dropdown-content a:hover {
+        background-color: #ddd;
+      }
+      
+      /* Styling for the button when the dropdown is active */
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      
+      /* Position the parent container on the top right of the page */
+      .dropdown-container {
+        position: absolute;
+        top: 46px;
+        right: 35px;
+        border-radius: 7px;
+      }
+     
+      header {
+    background-color: #7fe35b;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    margin: 0 auto; 
+    border-radius:10ch;
+}
+
+.logo img {
+    width: 40px; 
+    height: auto;
+    margin-right: 10px;
+    margin-top: 0px;
+}
+
+.logo span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+header {
+    background-color: #7fe35b;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    margin: 0 auto; 
+    border-radius:10ch;
+}
+
+.logo img {
+    width: 40px; 
+    height: auto;
+    margin-right: 10px;
+    margin-top: 0px;
+}
+
+.logo span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+
+      .latestnews {
+        color: black;
+
+        width: 1205px;
+        position: relative;
+        top: 30px;
+        left: 0px;
+        padding: px;
+
+
+      }
+
+
+      .modi:hover {
+        transform: scale(1.05);
+      }
+
+      .modi {
+        width: 800px;
+        height: 300px;
+
+        position: relative;
+        left: 0px;
+        top: 10px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      }
+
+      .modi-image {
+        width: 400px;
+        height: 250px;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+
+      }
+
+      .modihead {
+        position: absolute;
+        left: 430px;
+      }
+
+      .modipara {
+        position: absolute;
+        top: 60px;
+        left: 430px;
+        font-size: 110%;
+
+      }
+
+
+
+      .second_container:hover {
+        transform: scale(1.05);
+      }
+
+      .second_container {
+        width: 800px;
+        height: 300px;
+
+        position: relative;
+        top: 30px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+      }
+
+      .second_container_head {
+        position: absolute;
+        left: 430px;
+        top: 0px
+      }
+
+      .second_image {
+        width: 400px;
+        height: 250px;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+      }
+
+      .second_para {
+        position: absolute;
+        top: 60px;
+        left: 430px;
+        font-size: 110%;
+
+      }
+
+
+      .third_container:hover {
+        transform: scale(1.05);
+      }
+
+      .third_container {
+        width: 800px;
+        height: 300px;
+
+        position: absolute;
+        top: 850px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+      }
+
+      .third_container_head {
+        position: absolute;
+        left: 430px;
+        top: 0px
+      }
+
+      .third_image {
+        width: 400px;
+        height: 250px;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+      }
+
+      .third_para {
+        position: absolute;
+        top: 90px;
+        left: 430px;
+        font-size: 110%;
+
+      }
+
+
+
+      .fourth_container:hover {
+        transform: scale(1.05);
+      }
+
+
+
+      .fourth_container {
+        width: 800px;
+        height: 300px;
+
+        position: absolute;
+        top: 1180px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      }
+
+      .fourth_container_head {
+        position: absolute;
+        left: 430px;
+        top: 0px
+      }
+
+      .fourth_image {
+        width: 400px;
+        height: 250px;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+      }
+
+      .fourth_para {
+        position: absolute;
+        top: 90px;
+        left: 430px;
+        font-size: 110%;
+
+      }
+
+      .fifth_container:hover {
+        transform: scale(1.05);
+      }
+
+
+
+      .fifth_container {
+        width: 800px;
+        height: 300px;
+
+        position: absolute;
+        top: 1500px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      }
+
+      .fifth_container_head {
+        position: absolute;
+        left: 430px;
+        top: 0px
+      }
+
+      .fifth_image {
+        width: 400px;
+        height: 250px;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+
+      }
+
+      .fifth_para {
+        position: absolute;
+        top: 60px;
+        left: 430px;
+        font-size: 110%;
+      }
+
+
+      .sixth_container:hover {
+
+
+        transform: scale(1.05);
+      }
+
+
+
+
+      .sixth_container {
+        width: 800px;
+        height: 300px;
+        background-color: ;
+        position: absolute;
+        top: 1820px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      }
+
+      .sixth_container_head {
+        position: absolute;
+        left: 430px;
+        top: 0px
+      }
+
+      .sixth_image {
+        width: 400px;
+        height: 250px;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+
+      }
+
+      .sixth_para {
+        position: absolute;
+        top: 80px;
+        left: 430px;
+        font-size: 110%;
+      }
+
+
+
+      .social-media-icons {
+        width: 1480px;
+        display: block;
+        position: absolute;
+        top: 2100px;
+        left: 0px;
+      }
+
+
+
+      .weather-box {
+        border: 1px solid black;
+        padding: 10px;
+        width: 300px;
+        height: 150px;
+        margin: 20px;
+        text-align: center;
+        background-color: #F0F8FF;
+        box-shadow: 3px 3px 3px grey;
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+
+      .weather-icon {
+        display: inline-block;
+        font-size: 30px;
+        margin-right: 10px;
+        vertical-align: middle;
+
+
+        color: orange;
+
+      }
+
+
+      .weather {
+        width: 300px;
+        height: 200px;
+        background-color: #111212;
+        position: absolute;
+        top: 200px;
+        left: 1220px;
+        border-radius: 5px;
+        background-color: #b7aeae;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+
+      }
+
+      .sidenews_1 {
+        height: 300px;
+        width: 390px;
+
+        position: absolute;
+        text-align: center;
+        left: 820px;
+        top: 198px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      }
+
+      .sidenews_1:hover {
+
+        transform: scale(1.05);
+      }
+
+      .sidenews_image {
+
+        height: 60%;
+        width: 90%;
+        padding-left: 0px;
+
+
+        align-items: center;
+      }
+
+      .sidenews_2:hover {
+        transform: scale(1.05);
+      }
+
+      .sidenews_2 {
+        height: 300px;
+        width: 390px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        text-align: center;
+        position: absolute;
+        left: 820px;
+        top: 515px;
+
+
+      }
+
+      .sidenews2_image {
+        height: 60%;
+        width: 80%;
+        padding-left: 0px;
+
+
+
+      }
+
+
+      .sidenews_3:hover {
+        transform: scale(1.05);
+      }
+
+      .sidenews_3 {
+        height: 300px;
+        width: 390px;
+        position: absolute;
+        text-align: center;
+        left: 820px;
+        top: 850px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+      }
+
+      .sidenews3_image {
+        height: 60%;
+        width: 80%;
+        padding-left: 0px;
+      }
+
+
+
+      .sidenews_4:hover {
+        transform: scale(1.05)
+      }
+
+      .sidenews_4 {
+        height: 300px;
+        width: 390px;
+        position: absolute;
+        text-align: center;
+        left: 820px;
+        top: 1180px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+      }
+
+      .sidenews4_image {
+        height: 50%;
+        width: 70%;
+        padding-left: 0px;
+
+
+      }
+
+      .sidenews_5:hover {
+        transform: scale(1.05)
+      }
+
+      .sidenews_5 {
+        height: 300px;
+        width: 390px;
+        position: absolute;
+        text-align: center;
+        left: 820px;
+        top: 1500px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+      }
+
+      .sidenews5_image {
+        height: 50%;
+        width: 70%;
+        padding-left: 0px;
+
+
+      }
+
+      .sidenews_6:hover {
+        transform: scale(1.05);
+
+      }
+
+      .sidenews_6 {
+        height: 300px;
+        width: 390px;
+        position: absolute;
+        text-align: center;
+        left: 820px;
+        top: 1820px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+      }
+
+      .sidenews6_image {
+        height: 50%;
+        width: 70%;
+        padding-left: 0px;
+      }
+
+      a:link {
+        text-decoration: none;
+      }
+
+
+
+
+
+      .crypto_container{
+    width: 200px;
+    position: absolute;
+    right:50px;
+    top:450px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    align-items:center;
+
+ }
+
+
+ .btc{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left:70px;
+ }
+ .ethereum{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left:70px;
+    
+ }
+ .dogecoin{
+    width: 80px;
+    height: 50px;
+    position: relative;
+    left:55px;
+ }
+ .ripple{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: 70px;
+ }
+ .btcc{
+    position: relative;
+    left: 50px;
+ }
+ .btccc{
+    position: relative;
+    left: 65px;
+ }
+ .ethereumc{
+    position: relative;
+    left: 55px;
+ }
+ .ethereumcc{
+    position: relative;
+    left: 55px;
+ }
+ .dogecoinc{
+    position: relative;
+    left:70px;
+ }
+ .dogecoincc{
+    position: relative;
+    left: 60px;
+ }
+ .ripplec{
+    position: relative;
+    left:65px;
+ }
+ .ripplecc{
+    position: relative;
+    left:70px;
+ }
+ body{
+  
+ }
+ 
+
+
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+  </head>
+
+  <body>
+    <!-- First Part -->
+    <header>
+      <div class="logo">
+          <img src="Images/logo.png" alt="StockScope Logo">
+          <span>StockScope</span>
+      </div>
+      <nav>
+          <ul>
+              <li><a href="home.html">Explore Market</a></li>
+              <li><a href="news.html">News</a></li>
+              <li><a href="signin.html">Sign In</a></li>
+          </ul>
+      </nav>
+  </header>
+
+
+
+
+    <div class="latestnews">
+      <h1 class="ltnews">Latest news</h1>
+    </div>
+
+    <div class="modi">
+      <h2 class="modihead">
+        'Naatu Naatu' music composer MM Keeravaani receives Padma Shri
+      </h2>
+      <video autoplay loop muted width="50%" height="100%">
+
+        <source src="/images/nattu.mp4" type="video/mp4">
+
+
+
+      </video>
+      <p class="modipara">
+
+
+        Indian music composer MM Keeravaani, composer of the Oscar-winning song 'Naatu Naatu', on
+        Wednesday, was awarded the country's fourth highest civilian award, the Padma Shri, by President Draupadi
+        Murmu.<br>
+
+        Prime Minister Narendra Modi and Union Home Minister Amit Shah were in attendance at a gilded presentation
+        ceremony at the Rashtrapati Bhavan,official residence of the President of India.<br>
+
+        <a
+          href="https://www.aninews.in/news/entertainment/out-of-box/naatu-naatu-music-composer-mm-keeravaani-receives-padma-shri20230405185120/">read
+          more...</a>
+
+
+
+
+
+
+      </p>
+    </div>
+
+
+
+
+
+    <div class="second_container">
+
+      <h2 class="second_container_head">
+        Will remember my time in India, says outgoing Polish ambassador
+
+
+
+      </h2>
+      <video autoplay muted loop width="50%" height="90%">
+        <source src="/images/Polish.mp4" type="video/mp4">
+      </video>
+      <p class="second_para">
+        Polish Envoy says, 'Bharat Phir Milenge' as he leaves India for his next destination<br>
+        Polish Ambassador to India, Adam Burakowski, who is about to leave India and start his new term in South Africa,
+        held his last press conference on Wednesday, summing up his tenure of more than 5 years saying that he is going
+        to remember his time spent in India, for the rest of his life.<br>
+
+        <a
+          href="https://www.aninews.in/news/world/asia/will-remember-my-time-in-india-says-outgoing-polish-ambassador20230329205240/">read
+          more....</a>
+
+
+      </p>
+
+
+    </div>
+
+
+
+
+    <div class="third_container">
+
+      <h2 class="third_container_head">
+        Rajasthan’s first Vande Bharat Express flagged off by PM Narendra Modi
+      </h2>
+
+      <video autoplay loop muted width="50%" height="90%">
+        <source src="images/vande.mp4" type="video/mp4">
+
+      </video>
+
+      <p class="third_para">
+        Rajasthan's first Vande Bharat Express train is making its inaugural journey between Jaipur and Delhi Cantt
+        railway stations.<br>
+        At the launch event which he joined via video conferencing, PM Modi said the Vande Bharat Express enriches the
+        spirit of ‘India First, Always First’. <br>
+        <a
+          href="https://timesofindia.indiatimes.com/city/jaipur/pm-narendra-modi-flags-off-rajasthans-first-vande-bharat-express-train-delhi-ajmer-jaipur-gurgaon/articleshow/99426168.cms?from=mdr">read
+          more...</a>
+
+      </p>
+
+    </div>
+
+
+
+
+
+
+    <div class="fourth_container">
+
+      <h2 class="fourth_container_head">
+        'Bihu' performance with 11,304 dancers, drummers enters Guinness World Records
+
+
+      </h2>
+
+      <video autoplay loop muted width="50%" height="90%">
+        <source src="images/bihu.mp4" type="video/mp4">
+      </video>
+
+      <p class="fourth_para">
+        Assam on Thursday etched its name in the Guinness World Records with 11,304 dancers and drummers performing
+        'Bihu' dance and playing 'dhol' in a single venue.<br>
+        Chief Minister Himanta Biswa Sarma said. This is the largest recital of the folk dance form.<br>
+        <a
+          href="https://www.timesnownews.com/india/assams-bihu-enters-guinness-book-of-world-records-after-11304-folk-dancers-perform-traditional-dance-watch-article-99474122">read
+          more...</a>
+
+      </p>
+
+    </div>
+
+
+
+    <div class="fifth_container">
+
+      <h2 class="fifth_container_head">
+        Don Atiq Ahmad's son Asad killed in an encounter in UP's Jhansi
+      </h2>
+
+      <video autoplay loop muted width="50%" height="100%">
+        <source src="images/murder.mp4" type="video/mp4">
+      </video>
+
+      <p class="fifth_para">
+        Almost two months after lawyer Umesh Pal, a witness in Raju Pal murder was killed in a sensational shootout,
+        UPSTF on Thursday killed gangster- turned-politician Atiq Ahmad's son Asad Ahmad and his accomplice in UP's
+        Jhansi.<br>
+        They were wanted in Umesh Pal murder case.<br>
+        Special DG, law and order, Prashant Kumar, said both Asad and Ghulam were carrying reward of Rs 5 lakh each.<br>
+        <a
+          href="https://www.timesnownews.com/india/assams-bihu-enters-guinness-book-of-world-records-after-11304-folk-dancers-perform-traditional-dance-watch-article-99474122">read
+          more....</a>
+
+
+
+
+
+      </p>
+
+    </div>
+
+
+    <div class="sixth_container">
+
+      <h2 class="sixth_container_head">
+        "Being Ally Doesn't Mean Being Vassal": Macron's Jab At US Over Taiwan
+      </h2>
+
+      <video autoplay muted loop width="50%" height="90%">
+
+        <source src="images/France.mp4" type="video/mp4">
+
+
+
+      </video>
+
+      <p class="sixth_para">
+        French President Emmanuel Macron on Wednesday stood by his controversial comments on Taiwan, saying that being a
+        US ally did not mean being a "vassal".<br>
+        Macron, wrapping up a state visit to the Netherlands during which he has also faced protests over pension
+        reforms, said France still backed the "status quo" on Taiwan.<br>
+
+        <a
+          href="https://www.ndtv.com/world-news/french-president-emmanuel-macron-insists-wont-be-us-vassal-on-taiwan-3943712">read
+          more...</a>
+
+      </p>
+
+    </div>
+
+
+    <div class="weather">
+      <div id="ww_1e52d9208d4c1" v='1.3' loc='id'
+        a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl635"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>
+        Weather Data Source: <a href="https://weatherlabs.in/हिंदी/चेन्नई_का_मौसम/14_दिनों/" id="ww_1e52d9208d4c1_u"
+          target="_blank">चेन्नई में 14-दिन का मौसम</a></div>
+      <script async src="https://app1.weatherwidget.org/js/?id=ww_1e52d9208d4c1"></script>
+
+
+    </div>
+
+
+
+    <div class="sidenews_1">
+      <h2>
+        <a
+          href="https://www.yahoo.com/entertainment/amazon-introduces-bedrock-a-cloud-service-for-ai-generated-text-and-images-204556563.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAC83msGBCNk1G_50p5MQ4s75v-tKNMl4PfpRCSM-u24J-6Fd1neegxi8N9baKBzfjWIR8VVLk0rVeewGmHpQdQBrdlBj9vdPUT2WigRugJlieD7PAwJmcKqhxbGhaODIRS97qaFNb5UZdCHDjdApOaaHjcFZ6CD44In0_690VWrH">Amazon
+          announces 'Bedrock,' its ChatGPT and DALL-E rival</a>
+      </h2>
+      <img class="sidenews_image " src="images/amazon.jpeg">
+    </div>
+
+    <div class="sidenews_2">
+      <h2>
+        <a
+          href="https://www.latestly.com/socially/entertainment/richard-ng-renowned-hong-kong-actor-dies-at-83-5048679.html">
+          Hong Kong actor Richard Ng passes at 83.</a>
+      </h2>
+      <img class="sidenews2_image" src="images/ng.jpg">
+
+    </div>
+
+    <div class="sidenews_3">
+      <h2>
+        <a
+          href="https://indianexpress.com/article/cities/chennai/tamil-nadu-ban-csk-no-tamils-team-venkateshwaran-8551215/">MK
+          Legislator Seeks Ban On Chennai Super Kings</a>
+      </h2>
+      <img class="sidenews3_image" src="images/cskban.jpg">
+
+    </div>
+
+    <div class="sidenews_4">
+      <h2>
+        <a
+          href="https://www.timesnownews.com/india/pm-modi-takes-part-in-tamil-new-year-celebrations-at-mos-l-murugans-residence-watch-article-99473544">PM
+          Modi Takes Part In Tamil New Year Celebrations At MoS L Murugan's Residence</a>
+      </h2>
+      <img class="sidenews4_image" src="images/tamilnew.jpeg">
+    </div>
+
+    <div class="sidenews_5">
+      <h2>
+        <a
+          href="https://newsmobile.in/articles/2022/10/27/pm-modi-speaks-to-rishi-sunak-both-agree-on-early-conclusion-of-fta/">
+          PM Modi speaks to UK PM Rishi Sunak over phone, seeks progress on return of economic offenders</a>
+
+      </h2>
+      <img class="sidenews5_image" src="images/sunak.jpg">
+    </div>
+
+    <div class="sidenews_6">
+      <h2>
+        <a
+          href="https://www.thehindu.com/news/national/joint-army-iaf-exercise-validates-multi-mode-insertion-of-strategic-forces-in-eastern-theatre/article66733023.ece">
+          Army,IAF carry out mega exercise in eastern sector</a>
+
+      </h2>
+      <img class="sidenews6_image" src="images/iaf.jpg">
+    </div>
+
+
+    <div class="crypto_container">
+      <div class="coin_price">
+          <div class="logo">
+              <img class="btc" src="images/Bitcoin.svg.png">
+
+          </div>
+          <h3 class="btcc">₹<span id="bitcoin"></span>
+            25,65,646
+              
+          </h3>
+          <h3 class="btccc">
+              Bitcoin
+          </h3>
+
+      </div>
+
+
+      <div class="coin_price">
+          <div class="logo">
+              <img  class="ethereum" src=" images/eth.jpeg">
+
+          </div>
+          <h3 class="ethereumc">
+              ₹<span id="ethereum"></span>
+              1,76,848
+          </h3>
+          <h3 class="ethereumcc"> 
+              Ethereum
+          </h3>
+
+      </div>
+
+
+      <div class="coin_price">
+          <div class="logo">
+              <img  class="dogecoin" src="images/dogecoin.png">
+
+          </div>
+          <h3 class="dogecoinc">
+              ₹<span id="dogecoin"></span>
+              7.72
+          </h3>
+          <h3 class="dogecoincc">
+              Dogecoin
+          </h3>
+
+      </div>
+
+
+      <div class="coin_price">
+          <div class="logo">
+              <img class="ripple" src="images/ripple.jpg">
+
+          </div>
+          <h3 class="ripplec">
+              ₹<span id="ripple"></span>
+              44.67
+          </h3>
+          <h3 class="ripplecc">
+             Ripple
+          </h3>
+
+      </div>
+
+
+      
+
+
+  </div>
+  <script src="ap.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
