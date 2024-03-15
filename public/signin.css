@@ -1,0 +1,119 @@
+body {
+    background-color:#44475b;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #7fe35b;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    margin: 0 auto; 
+    border-radius:10ch;
+}
+
+.logo img {
+    width: 40px; 
+    height: auto;
+    margin-right: 10px;
+    margin-top: 0px;
+}
+
+.logo span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+.gg{
+     
+        width: 50%; /* Set width of the centered div */
+        margin: 0 auto; /* Center the div horizontally within its parent */
+        
+        padding: 20px; /* Optional: Add padding for visual clarity */
+    
+}
+
+
+.signin{
+    text-align: center;
+}
+
+
+
+/* Your existing CSS styles */
+
+.error-message {
+    text-align: center; /* Center-align text */
+    margin-top: 20px; /* Add space between the error message and other elements */
+    color: red; /* Set color of error message */
+}
+
+
+h1 {
+    text-align: center;
+    color: #7fe35b;
+}
+
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #7fe35b;
+}
